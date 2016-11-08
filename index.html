@@ -4,18 +4,78 @@
     <title>The AJAXson 5</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="request-gif.js"></script>
+
+    <style>
+      body  {
+        font-family: arial, sans-serif;
+      }
+      h1 {
+        width:100%;
+        background-color: #e1e1e1;
+      }
+      #user-Input {
+        width:350px;
+        margin-top:5px;
+      }
+      #fancy-robots {
+        background-color:#e1e1e1;
+        margin-top:9px;
+        margin-bottom:9px;
+        padding:9px;
+        width:350px;
+      }
+
+      #robots {
+        width:100px;
+        margin-top:9px;
+        margin-right:9px;
+      }
+
+      .btn {
+        -webkit-border-radius: 8;
+        -moz-border-radius: 8;
+        border-radius: 8px;
+        font-family: Arial;
+        color: #ffffff;
+        font-size: 15px;
+        background: #91b804;
+        padding: 10px 19px 10px 19px;
+        border: solid #77b504 2px;
+        text-decoration: none;
+        margin-top:15px;
+        margin-bottom:15px;
+      }
+
+      .btn:hover {
+        background: #4c8f00;
+        text-decoration: none;
+      }
+
+      #loading  {
+        margin-left:187px;
+      }
+
+      #errorBot {
+        color:red;
+        font-weight:bold;
+      }
+    </style>
 </head>
 <body>
     <h1>The AJAXson 5</h1>
-
+<p id="loading" hidden="false" >Loading...</p>
     <form id="form-gif-request" />
-        <label>What kind of Jackson 5 related gif do you want?</label>
-        <input name="tag" type="text"/>
-        <input type="submit" value="Get my Gif!" />
+        <label>What kind of Jackson 5 related gif do you want?</label><br />
+        <input id="user-Input" name="tag" type="text" value="e.g. dance"/><br /><br />
+        <label>Prove you are not a robot by answering this riddle:</label><br />
+        <span id="fancy-robots"><input id="robots" name="tag" type="text" /> Jacksons are better than 1</span><br />
+        <input class="btn" type="submit" value="Get my Gif!" onclick="return validateForm()" /><br />
     </form>
 
-    <img id="gif" src="" hidden="true"/>
-    <p id="feedback" hidden="true`"></p>
+    <img id="gif" src="" hidden="false" />
+    <p id="feedback" hidden="true"></p>
+    <!-- <p id="loading" hidden="true">Loading...</p>  ->
+    <p id="errorBot" ></p>
 
 </body>
 </html>
